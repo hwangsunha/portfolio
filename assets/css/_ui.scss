@@ -1,0 +1,306 @@
+/* UI */
+
+// Loader
+
+.logo-loader {
+    @extend %transition;
+    @extend %no-select;
+    @include rounded(100%);
+    @include opacity(0);
+    position:absolute;
+    width:8px;
+    height:8px;
+    z-index:5000;
+    top:50%;
+    right:0;
+    background:$red;
+    margin:-4px -20px 0 0;
+    @include respond_to(mobile){
+        margin-top:-6px;
+    }
+}
+
+.loader {
+    @extend %transition;
+    @extend %no-select;
+    @include rounded(100%);
+    @include opacity(0);
+    width:15px;
+    height:15px;
+    position:fixed;
+    top:50%;
+    left:50%;
+    z-index:5000;
+    background:$red;
+    margin:-7.5px 0 0 -7.5px;
+}
+
+// Inputs
+
+input, textarea {
+  @extend %transition;
+  &:hover, &:active, &:focus {
+    outline:none;
+  }
+}
+
+// Lists
+
+.list {
+    @extend %clearfix;
+    @extend %border-box;
+    margin:0;
+    padding:0;
+    width:100%;
+}
+
+.list-item {
+    @extend %border-box;
+    list-style:none;
+    margin:0;
+    padding:0;
+    @include respond_to(tablet-portrait){
+        width:50%;
+        float:left;
+        padding-right:$m_pad;
+    }
+    @include respond_to(mobile){
+        width:50%;
+        float:left;
+        padding-right:$m_pad;
+    }
+     @include respond_to(mobile-small){
+        width:100%;
+        float:none;
+        padding-right:none;
+    }
+    &.detail {
+        @include respond_to(tablet-portrait){
+            width:100%;
+            float:left;
+            padding-right:0;
+        }
+    }
+    &.dashed {
+        @extend h2;
+        margin:0;
+        position:relative;
+        padding:0 0 ($g_pad_s / 3) 20px;
+        &:before {
+            content:"–";
+            left:0;
+            position:absolute;
+            color:$gray_03;
+        }
+    }
+    &.large {
+        @extend h2;
+        margin:0;
+        position:relative;
+        padding:0 0 ($g_pad_s / 3);
+    }
+    &.bold {
+        font-family:$font_stack;
+        font-weight:600;
+        padding-bottom:$g_pad;
+        @include respond_to(mobile){
+            padding-bottom:$m_pad;
+        }
+    }
+    &.done {
+        text-decoration:line-through;
+    }
+    &.duration {
+        padding-bottom:$g_pad_s;
+    }
+    &.project-url {
+        padding-top:$g_pad_s;
+    }
+    &:last-child {
+        padding-bottom:0;
+    }
+}
+
+.list-social {
+    margin:0;
+    list-style-type:none;
+    @include respond_to(tablet-below){
+        margin:0;
+        padding:0;
+        padding-bottom:$m_pad;
+        float:none;
+    }
+    @include respond_to(tablet-portrait){
+        text-align:center;
+    }
+    .link {
+        &.twitter:hover {
+            border-color:$twitter;
+        }
+        &.instagram:hover {
+            border-color:$instagram;
+        }
+        &.facebook:hover {
+            border-color:$facebook;
+        }
+        &.dribbble:hover {
+            border-color:$dribbble;
+        }
+    }
+
+}
+
+.list-social-item {
+    float:left;
+    padding:($g_pad_s / 2) $g_pad;
+    padding-left:0;
+    // &:nth-last-child(2), &:last-child {
+    //     padding-bottom:0;
+    // }
+    @include respond_to(tablet-portrait){
+        width:50%;
+        text-align:center;
+        padding:0;
+        padding-bottom:$g_pad_s;
+    }
+    @include respond_to(mobile){
+        width:50%;
+        text-align:center;
+        padding:0;
+        padding-bottom:$g_pad_s;
+        &:last-child, &:nth-last-child(2){
+            padding-bottom:0;
+        }
+    }
+}
+
+
+// Links
+
+.nav-main {
+    .link.contact {
+        color:$gray_01;
+        font-family:$font_stack;
+        font-weight:600;
+        padding-bottom:2px;
+        border-bottom:2px solid $gray_03;
+        &:hover {
+            border-color:$gray_01;
+        }
+    }
+}
+
+.link {
+    @extend %transition;
+    color:$gray_01;
+    font-weight:600;
+    padding-bottom:2px;
+    border-bottom:2px solid $gray_03;
+    &:hover {
+        color:$gray_01;
+    }
+}
+
+.link-intro {
+    @extend h2;
+    @extend .link;
+    color:$gray_02;
+    font-weight:300;
+}
+
+.link-next-prev {
+    display:inline-block;
+    &.next {
+        float:right;
+        // @include respond_to(mobile){
+        //     float:left;
+        //     clear:both;
+        // }
+    }
+    &.prev {
+        float:left;
+        // @include respond_to(mobile){
+        //     float:left;
+        //     clear:both;
+        // }
+    }
+    // @include respond_to(mobile){
+    //     float:left;
+    //     clear:both;
+    //     margin-bottom:$m_pad;
+    //     &:last-child {
+    //         margin-bottom:0;
+    //     }
+    // }
+}
+
+// SVG
+
+.svg-almi {
+    @extend %no-select;
+    width:42px;
+    height:70px;
+    cursor:pointer;
+    .almi-heads, .almi-body {
+        fill: $gray_01;
+    }
+    &:hover {
+        .head-left {
+            @include translate(9px, 0);
+        }
+        .head-right {
+            @include translate(-9px, 0);
+        }
+    }
+    @include respond_to(tablet-portrait){
+        float:none;
+        margin:0 auto $m_pad;
+    }
+    @include respond_to(mobile){
+        float:none;
+        margin:0 auto $m_pad;
+    }
+    circle {
+        @extend %transition;
+        position:relative;
+    }
+}
+
+// Almi
+.almi-gif-wrapper {
+    @include opacity(0);
+    width:100%;
+    height:100%;
+    z-index:-1;
+    position:fixed;
+    top:0px;
+    left:0px;
+    &.is-visible {
+        @include opacity(1);
+        z-index:11;
+    }
+}
+
+.almi-gif {
+    @extend %transition;
+    @extend %backface-hidden;
+    @include translate_y(0);
+    position:fixed;
+    top:100%;
+    left:0px;
+    width:100%;
+    height:100%;
+    cursor:url('../img/ui/ui-cursor-close.png'), auto;
+    background:url('../img/bg/bg-almi.gif') center no-repeat;
+    background-size:cover;
+    @include respond_to(retina){
+        cursor:url('../img/ui/ui-cursor-close@2x.png'), auto;
+    }
+    @include respond_to(mobile){
+        background:url('../img/bg/bg-almi-mobile.gif') center no-repeat;
+        background-size:cover;
+    }
+    &.is-visible {
+        @include translate_y(-100%);
+    }
+}

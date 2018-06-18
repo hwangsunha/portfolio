@@ -1,0 +1,74 @@
+/* Variables - SCSS */
+
+// Fonts
+$font_stack                 : "ff-mark-web", "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+$font_smallcaps             : "ff-mark-sc-web", "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+
+// Colors
+$white                      : #ffffff;
+$black                      : #000000;
+$blue                       : #5acde0;
+$green                      : #72d69a;
+$red                        : #f47d91;
+$gray_01                    : #505050;
+$gray_02                    : #888888;
+$gray_03                    : #d6d6d7;
+$gray_04                    : #e8e7e7;
+$gray_05                    : #f6f6f6;
+
+// Project Colors
+$trachman                   : #82669c;
+$menagerie                  : #f15e22;
+$guroo                      : #ef3d37;
+$schoolrunner               : #4cc1ab;
+$westernrise 				: #cbd1a9;
+
+// Social Media Colors 
+$twitter                   	: #00aced;
+$instagram                  : #3f729b;
+$facebook                   : #3b5998;
+$dribbble               	: #ea4c89;
+
+
+// Font Sizes
+$font_base                  : 62.5%;
+$size_h1					: 3.8;
+$size_h2					: 2.4;
+$size_h3					: 2.2;
+$size_body					: 1.8;
+$size_medium 				: 1.4;
+$size_small 				: 1.2;
+
+// Arrays
+$columns                    : 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12;
+$column_fraction            : 108.33333333333333;
+
+// Animation Speeds
+$speed_slow 				: 15s;
+$speed_medium 				: 12s;
+$speed_fast					: 8s;
+
+// Media Queries
+$break_small                : 480px;
+$break_med                	: 600px;
+$break_med_large            : 800px;
+$break_large                : 1300px;
+$break_large_extra 			: 1500px;
+$break_large_max 			: 2000px;
+$break_mobile_small         : 320px;
+$break_mobile_large         : 580px;
+
+// Layout dimensions
+$container_size             : 1300px;
+$container_base             : 1300;
+$container_size_mobile		: 320px;
+$con_four_col_size			: round($container_size / 4);
+$con_three_col_size			: round($container_size / 3);
+$con_two_col_size			: round($container_size / 2);
+$con_one_col_size			: 100%;
+
+// Layout Margins
+$g_pad_l                    : 100px;
+$g_pad						: 50px;
+$g_pad_s					: 30px;
+$m_pad						: 25px;

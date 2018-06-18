@@ -1,0 +1,166 @@
+s/* Global Elements */
+
+* {
+  -webkit-tap-highlight-color: rgba(0,0,0,0);
+  outline:none;
+}
+
+::-webkit-input-placeholder { 
+    // Stuff here
+}
+:-moz-placeholder { 
+    // Stuff here
+}
+::-moz-placeholder { 
+    // Stuff here
+}
+:-ms-input-placeholder {
+    // Stuff here
+}
+
+::selection {color:$white;background:$green;}
+::-moz-selection {color:$white;background:$green;}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    /* display: none; <- Crashes Chrome on hover */
+    -webkit-appearance: none;
+    margin: 0; /* <-- Apparently some margin are still there even though it's hidden */
+}
+
+svg {
+  @extend %transition;
+  @extend %translate-3d;
+  path {
+    @extend %transition;
+  }
+}
+
+img {
+  display:block;
+  margin:0;
+  padding:0;
+  // max-width:100%;
+  // outline:1px solid transparent; // Weird bug fix for all fixed elements on iOS
+  &.full {
+    width:100%;
+  }
+}
+
+a {
+  text-decoration:none;
+  @extend %transition;
+  &:hover {
+    outline:none;
+  }
+  &:active, &:visited, &:focus {
+    outline:none;
+  }
+}
+
+p {
+  margin-top:0;
+  padding-top:0;
+  &:last-child {
+    margin-bottom:0;
+    padding-bottom:0;
+  }
+}
+
+html, body {
+  -webkit-overflow-scrolling:touch;
+  width:100%;
+  height:100%;
+}
+
+html { 
+  font-size:$font_base;
+  // @include respond_to(desktop-max){
+  //   font-size:85%;
+  // }
+  // @include respond_to(desktop-large){
+  //   font-size:75%;
+  // }
+  // @include respond_to(tablet){
+  //   font-size:60%;
+  // }
+  @include respond_to(tablet-portrait){
+    font-size:55%;
+  }
+  @include respond_to(mobile){
+    font-size:50%;
+  }
+  &.almi-is-visible body {
+    @include page_colors($white);
+    overflow:hidden;
+    .svg-almi .almi-heads, .svg-almi .almi-body {
+      fill:$white;
+    }
+    h1, .list-social .link, .list-social .link:hover {
+      color:$white;
+    }
+    .list-social .link {
+        border-color:$white;
+    }
+    .container, .nav-main {
+      overflow:visible;
+    }
+    .nav-main:after {
+      content:"";
+      display:block;
+      width:100%;
+      height:100%;
+      position:fixed;
+      background:$white;
+      z-index:-1;
+      top:0;
+      left:0;
+    }
+  }
+}
+
+body {
+  @include font_size($size_body,($size_body * 1.62));
+  @extend %antialiased;
+  font-family:$font_stack;
+  color:$gray_02;
+  background:$gray_05;
+  width:100%;
+  height:100%;
+  &.portfolio {
+    @include page_colors($green);
+    .section {
+      @include respond_to(tablet-below){
+        padding-bottom:0;
+      }
+    }
+  }
+  &.splash {
+    background: $white;
+  }
+  &.studio {
+    @include page_colors($red);
+  }
+  &.contact {
+    @include page_colors($blue);
+  }
+  &.journal {
+    @include page_colors($gray_02);
+  }
+  &[class*="guroo"] {
+    @include page_colors($guroo);
+  }
+  &[class*="trachman"] {
+    @include page_colors($trachman);
+  }
+  &[class*="menagerie"] {
+    @include page_colors($menagerie);
+  }
+  &[class*="schoolrunner"] {
+    @include page_colors($schoolrunner);
+  }
+  &[class*="western-rise"] {
+    @include page_colors($westernrise);
+  }
+}
+

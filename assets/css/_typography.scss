@@ -1,0 +1,42 @@
+/* Typography */
+
+h1 {
+  font-family:$font_stack;
+  color:$gray_01;
+  font-weight:300;
+  margin:0;
+  padding:0 0 $g_pad;
+  @include font_size($size_h1,($size_h1 * 1.52));
+  @include respond_to(mobile){
+    padding:0 0 $m_pad;
+  }
+}
+
+h2 {
+  font-family:$font_stack;
+  color:$gray_01;
+  font-weight:300;
+  margin:0;
+  padding:0 0 $g_pad_s;
+  @include font_size($size_h2,($size_h2 * 1.5));
+  @include respond_to(mobile){
+    padding:0 0 $m_pad;
+  }
+}
+
+h3 {
+  font-family:$font_stack;
+  color:$gray_01;
+  font-weight:300;
+  margin:0;
+  padding:0 0 $g_pad_s;
+  @include font_size($size_h3,($size_h3 * 1.5));
+  @include respond_to(mobile){
+    padding:0 0 $m_pad;
+  }
+}
+
+.article-title {
+  font-weight:600;
+  padding-bottom:$g_pad / 2;
+}
