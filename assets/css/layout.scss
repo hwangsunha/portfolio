@@ -1,0 +1,302 @@
+/* Layout */
+
+.container {
+    @extend %clearfix;
+    max-width:$container_size;
+    margin:0 auto;
+    background:$white;
+    overflow:hidden;
+}
+
+.header {
+    @extend %transition;
+    @extend %clearfix;
+    @extend %border-box;
+    padding:$g_pad_l $g_pad_l $g_pad;
+    color:$gray_01;
+    position:relative;
+    z-index:800;
+    @include respond_to(tablet-below){
+        padding:$g_pad;
+    }
+    @include respond_to(mobile){
+        padding:$m_pad;
+    }
+}
+
+.yh-heading {
+    @extend %border-box;
+    margin:0;
+    padding:0;
+    padding-right:$m_pad;
+    @include respond_to(mobile){
+        max-width:200px;
+        line-height:1;
+    }
+}
+
+// Overwrite .span-8
+.tablet .yh-heading {
+    @include respond_to(tablet-portrait){
+        width:90%;
+    }
+}
+
+.content-heading {
+    @include respond_to(mobile){
+        display:none;
+    }
+}
+
+.yh-logo {
+    @extend %transition;
+    @extend %backface-hidden;
+    @include opacity(0);
+    font-weight:700;
+    color:$white;
+    display:inline-block;
+    position:relative;
+    z-index:1000;
+    &.large {
+        display:block;
+        @include respond_to(mobile){
+            display:none;
+        }
+    }
+    &.small {
+        @include font_size(5.2,(5.2 * 1.4)); // Height of menu icon
+        display:none;
+        @include respond_to(mobile){
+            display:block;
+        }
+    }
+}
+
+// Fixed header
+.header-fixed {
+    @extend %clearfix;
+    position:absolute;
+    z-index:900;
+    width:100%;
+    height:$g_pad;
+    max-width:$container_size;
+    top:$g_pad;
+    left:0;
+    &.scrolled {
+        @include respond_to(desktop-above){
+            top:-($g_pad / 2);
+            position:fixed;
+        }
+        @include respond_to(mobile){
+            top:$m_pad / 2;
+        }
+    }
+    @include respond_to(desktop-above){
+        // display:none;
+        left:50%;
+        margin-left:-($container_size / 2);
+    }
+    @include respond_to(tablet-below){
+        top:$g_pad;
+        position:fixed;
+    }
+    @include respond_to(mobile){
+        top:$m_pad / 2;
+        position:fixed;
+    }
+    .yh-logo {
+        // @include font_size(4.2,(4.2 * 1.4)); // Height of menu icon
+        @include opacity(1);
+        @extend h1;
+        margin:$g_pad 0 0 $g_pad_l;
+        padding:0;
+        font-weight:700;
+        cursor:("../img/ui/circle-01.png") 6 6, auto;
+        color:$gray_03;
+        @include respond_to(tablet-below){
+            margin:0 0 0 $g_pad;
+            top:0;
+        }
+        @include respond_to(mobile){
+            margin:0 0 0 $m_pad;
+            top:0;
+        }
+    }
+    .btn-menu {
+        position:relative;
+        margin:$g_pad $g_pad_l 0 0;
+        top:auto;
+        right:auto;
+        .line {
+            background:$gray_03;
+        }
+        @include respond_to(tablet-below){
+            margin:0 $g_pad 0 0;
+            top:0;
+        }
+        @include respond_to(mobile){
+            margin:0 $m_pad 0 0;
+            top:0;
+        }
+    }
+}
+
+.content-wrapper {
+    @extend %clearfix;
+    position:relative;
+    z-index:10;
+}
+
+.section {
+    @extend %border-box;
+    padding:$g_pad_l ($g_pad + $m_pad) 0;
+    position:relative;
+    z-index:10;
+    @include respond_to(tablet-below){
+        padding:$g_pad ($g_pad / 2) 0;
+    }
+    @include respond_to(mobile){
+        padding:$m_pad $m_pad 0;
+    }
+    &.wrapper {
+        min-height:2000px;
+    }
+}
+
+.page-heading {
+    display:none;
+    visibility:hidden;
+}
+
+.section-intro {
+    &.portfolio {
+        padding-bottom:0;
+    }
+}
+
+.footer {
+    @extend %clearfix;
+    @extend %border-box;
+    padding:$g_pad ($g_pad + $m_pad) 0;
+    position:relative;
+    z-index:12;
+    @include respond_to(tablet-below){
+        padding:$g_pad ($g_pad / 2) 0;
+    }
+    @include respond_to(tablet-portrait){
+        text-align:center;
+        padding:$m_pad $m_pad 0;
+    }
+    @include respond_to(mobile){
+        text-align:center;
+        padding:$g_pad $m_pad 0;
+    }
+}
+
+.friends {
+    text-align:right;
+}
+
+.friends-quote {
+    width:83.33333%;
+    color:$gray_03;
+    padding-top:$g_pad_s;
+    // padding-left:$g_pad_l - 15;
+    @include respond_to(mobile){
+        padding:0 $g_pad_s;
+        float:none;
+        width:auto;
+    }
+
+    h2 {
+        color:$gray_03;
+    }
+
+}
+
+// Columns
+
+.column-title {
+    @extend %small-caps;
+    color:$gray_03;
+    font-family:$font_stack;
+    padding-bottom:$g_pad;
+    font-weight:500;
+    &:after {
+        content:" –";
+    }
+    @include respond_to(mobile){
+        padding-bottom:$m_pad;
+    }
+    &.article {
+        padding-bottom:0;
+    }
+    &.blank {
+        @extend %no-select;
+        &:after {
+            content:"";
+        }
+        @include respond_to(tablet-portrait){
+            display:none;
+        }
+        @include respond_to(mobile){
+            display:none;
+        }
+    }
+}
+
+.column-row {
+    @extend %clearfix;
+    clear:both;
+}
+
+// The grid
+
+@include build_columns($columns,$column_fraction,$container_base);
+
+.column {
+    @extend %border-box;
+    float:left;
+    padding:0 $m_pad $g_pad_l;
+    @include respond_to(tablet-portrait){
+        width:100%;
+        padding-bottom:$g_pad;
+    }
+    @include respond_to(mobile){
+        width:100%;
+        clear:both;
+        padding:0 0 $g_pad;
+    }
+    &.full {
+        padding-left:0;
+        padding-right:0;
+        clear:both;
+        @extend %clearfix;
+    }
+    &.article {
+        padding-bottom:$g_pad;
+        @include respond_to(mobile){
+            padding-bottom:$g_pad_s;
+        }
+    }
+    // Section specific
+    &.contact {
+        clear:both;
+    }
+    &.empty {
+        padding-bottom:0;
+    }
+    &:last-child {
+        // @include respond_to(mobile){
+            // padding-bottom:0;
+            // margin-bottom:0;
+            // img {
+                // padding-bottom:0;
+                // margin-bottom:0;
+            // }
+        // }
+    }
+    &.right {
+        float:right;
+    }
+}
