@@ -21,7 +21,7 @@ https://github.com/hwangsunha/portfolio/
     <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0">
     <link rel="apple-touch-icon" href="http://youngandhungry.co/assets/img/shared/apple-icon-touch.png">
     <link rel="shortcut icon" href="http://youngandhungry.co/assets/img/shared/favicon.ico" type="image/x-icon">
-    <script src="https://maps.googleapis.com/maps/api/js?sensor=false"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?sensor=false&language=en"></script>
     
     <!-- Styles & Modernizr -->
     <link rel="stylesheet" href="https://hwangsunha.github.io/portfolio/assets/css/style.css" />
@@ -100,9 +100,9 @@ https://github.com/hwangsunha/portfolio/
     <div class="column span-4 right">
         <div class="column-title">Details</div>
         <ul class="list contact-info">
-            <li class="list-item"><a class="link" href="mailto:hello@youngandhungry.co">hwangsunhadesign@gmail.com</a></li>
+            <li class="list-item"><a class="link" href="mailto:hwangsunhadesign@gmail.com">hwangsunhadesign@gmail.com</a></li>
             <li class="list-item"><a class="link" href="tel:+1 720 663 9022">+82 (0) 10 2895 1066</a></li>
-            <li class="list-item"><a class="link" href="https://www.google.com/maps/d/u/0/edit?hl=ko&mid=1VR8Rg-x4NX4qwJTs035HtWOynlRZPYjd&ll=37.553268041087975%2C126.97044861607742&z=17" target="_blank">1155 Sherman Street, Unit 307<br />
+            <li class="list-item"><a class="link" href="https://drive.google.com/open?id=1VR8Rg-x4NX4qwJTs035HtWOynlRZPYjd&usp=sharing" target="_blank">1155 Sherman Street, Unit 307<br />
 Denver, Colorado 80203</a></li>
         </ul>
     </div>
@@ -121,6 +121,8 @@ Denver, Colorado 80203</a></li>
 
             // Y&H Coordinates
             var ynhCoords = new google.maps.LatLng(37.553751, 126.969652);
+			var mapLocation = new google.maps.LatLng(37.553751, 126.969652); // 지도에서 가운데로 위치할 위도와 경도
+			var markLocation = new google.maps.LatLng(37.553751, 126.969652); // 마커가 위치할 위도와 경도
 
             // Map Options
             var mapOptions = {
