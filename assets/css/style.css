@@ -17,14 +17,14 @@ li {
   padding: 0 20px;
 }
 
-.snsline
+.link instagram>span
  {
   position: relative;
   display: block;
   cursor: pointer;
 }
 
-.snsline:before, .snsline:after {
+.link instagram>span:before, .link instagram>span:after {
   content: '';
   position: absolute;
   width: 0%;
@@ -34,22 +34,22 @@ li {
   background: #fff;
 }
 
-.snsline:before {
-  left: -2.5px;
+.link instagram>span:before {
+  left: 0px;
 }
-.snsline:after {
+.link instagram>span:after {
   right: 2.5px;
   background: #000;
   transition: width 0.3s cubic-bezier(0.22, 0.61, 0.36, 1);
 }
 
-.snsline:hover:before {
+.link instagram>span:hover:before {
   background: #000;
   width: 100%;
   transition: width 0.3s cubic-bezier(0.22, 0.61, 0.36, 1);
 }
 
-.snsline:hover:after {
+.link instagram>span:hover:after {
   background: transparent;
   width: 100%;
   transition: 0s;
