@@ -160,6 +160,45 @@ a>span:hover:after {
   transition: 0s;
 }
 
+	
+	
+	
+	
+	
+	
+.static_txt_mail>a>span:before,.static_txt_mail>
+ a>span:after {
+  content: '';
+  position: absolute;
+  width: 0%;
+  height: 1px;
+  top: 50%;
+}
+
+.static_txt_mail>a>span:before {
+  left: -2.5px;
+}
+.static_txt_mail>
+a>span:after {
+  right: 2.5px;
+  background: #000;
+  transition: width 0.8s cubic-bezier(0.22, 0.61, 0.36, 1);
+}
+
+.static_txt_mail>
+a>span:hover:before {
+  background: #fff;
+  width: 100%;
+  transition: width 0.5s cubic-bezier(0.22, 0.61, 0.36, 1);
+}
+
+.static_txt_mail>
+a>span:hover:after {
+  background: transparent;
+  width: 100%;
+  transition: 0s;
+}
+
 		
 		
 		
