@@ -29,6 +29,7 @@ bottom:55px;
 .pos_fixed_tel{
 position:fixed;
 bottom:55px;
+padding-right: 50px;
 right: 80px;
 }
 
